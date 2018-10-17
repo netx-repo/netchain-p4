@@ -1,3 +1,4 @@
+import sys
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -31,7 +32,14 @@ def draw(num_vgroup, plot_id):
     plt.xlabel('Time (s)')
     plt.ylabel('Throughput (QPS)')
 
+def usage():
+    print "Usage:"
+    print "    python plot.py [number of virtual groups] (e.g. python plot.py 20)"
+    return 
+
 if __name__ == "__main__":
-    draw("20", 1)
-    draw("1", 2)
+    if (len(sys.argv) != 2):
+        usage()
+        quit()
+    draw(sys.argv[1], 1)
     plt.show()

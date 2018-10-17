@@ -119,6 +119,8 @@ def stop_switch(fail_switch_id, switches, hosts, net):
 def test_normal(parameters):
     (switches, hosts, net, chains) = run(parameters)
     init_flowtable(parameters)
+    logging.info("Run for 60 seconds...")
+    time.sleep(60)
     net.stop()
     clean()
     return
