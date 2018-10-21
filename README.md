@@ -1,8 +1,24 @@
 # net-chain
-0. Introduction<br>
+## 0. Introduction<br>
 - BMV2-based simple implementation of NetChain (related paper can be found here: https://www.usenix.org/conference/nsdi18/presentation/jin).
 
-1. Content<br>
+## 1. Obtain required software<br>
+- Firstly, you need to get the p4 compiler from Github, and install required dependencies.<br>
+  > git clone https://github.com/p4lang/p4c-bm.git p4c-bmv2<br>
+  > cd p4c-bmv2<br>
+  > sudo pip install -r requirements.txt<br>
+- Secondly, you need to get the behavior model of p4 from github, install dependencies and compile the behavior model.<br>
+  > git clone https://github.com/p4lang/behavioral-model.git bmv2<br>
+  > cd bmv2<br>
+  > install_deps.sh<br>
+  > ./autogen.sh<br>
+  > ./configure<br>
+  > make<br>
+- Finally, you need to install some other tools which are used in this simulation.<br>
+  > sudo apt-get install mininet python-ipaddr<br>
+  > sudo pip install scapy thrift networkx<br>
+
+## 2. Content<br>
    - client<br>
      - client/nc_socket.py<br>
      - client/receiver.py<br>
@@ -31,7 +47,7 @@
    - .gitignore<br>
    - README.md<br>
 
-2. How to run<br>
+## 3. How to run<br>
 - Install required software and dependency for P4 (P4-14).<br>
 - Make sure the directory informations are correct in
   > controller/config/config.xml.<br>
