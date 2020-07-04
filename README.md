@@ -1,6 +1,7 @@
-# net-chain
+# NetChain
 ## 0. Introduction<br>
-- BMV2-based simple implementation of NetChain (related paper can be found here: https://www.usenix.org/conference/nsdi18/presentation/jin).
+
+BMV2-based implementation of NetChain for paper ["NetChain: Scale-Free Sub-RTT Coordination"](https://www.usenix.org/conference/nsdi18/presentation/jin) published in NSDI 2018.
 
 ## 1. Obtain required software<br>
 - Firstly, you need to get the p4 compiler from Github, and install required dependencies.<br>
@@ -51,11 +52,11 @@
 - Install required software and dependency for P4 (P4-14).<br>
 - Make sure the directory informations are correct in
   > controller/config/config.xml.<br>
-- Go to directory controller, you can simply run program in normal mode: 
+- Go to directory controller, you can simply run program in normal mode:
   > sudo python run_test.py normal.
-- Or you can run program in failure recovery mode: 
+- Or you can run program in failure recovery mode:
   > sudo python run_test.py failure.
-- The program produces results for failure recovery at logs/. The format of the files is 
+- The program produces results for failure recovery at logs/. The format of the files is
   > [number of virtual groups].tmp_[read/write]_[send/receive].log.
-- You can draw figures by running: 
+- You can draw figures by running:
   > python plot.py [number of virtual groups].
